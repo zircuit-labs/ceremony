@@ -21,3 +21,4 @@ For more information, please refer to the [build](/docs/build.md) and [ceremony]
 | Contribution | SHA256 | Issue |
 |:-:|:-:|:-:|
 | [`0000000000.csrs`](https://mainnet-ceremony.s3.amazonaws.com/valid/0000000000.csrs)    | `fcba4b152b3ca7af1bc82b5a3babbe0104badd134414578e7824edb12c650c12`   | [#1](https://github.com/zircuit-labs/ceremony/issues/1)   |
+| [`0000000001.csrs`](https://mainnet-ceremony.s3.amazonaws.com/valid/0000000001.csrs)    | `0e2c2bf5c7157d2301aec31fbf981474b4630f6434bb147ba0c1855d632fa111`   | [#2](https://github.com/zircuit-labs/ceremony/issues/2)   |

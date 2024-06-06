@@ -1,0 +1,107 @@
+name: Contribution Instructions
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Provide instructions for contributions
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          Thank you for your interest in contributing to the Zircuit Ceremony! 
+
+          **Begin the following process only after receiving notification that it is your turn to contribute through a message in this issue. Please follow instructions only from the issue's assignee.**
+          
+          Once notified, you have **1 hour** to confirm by posting a message in this issue that you have started your contribution. If you do not confirm within one hour, your contribution slot might be suspended.
+          
+          ## Prerequisites
+          
+          ### Get sources
+          
+          ```shell
+          git clone https://github.com/zircuit-labs/ceremony.git
+          cd ceremony
+          ```
+          
+          ### Generate an SSH Key - Optional
+          
+          Contributors are required to provide an SSH public key to upload their contributions to our servers.
+          
+          If you don't have one, you can generate a new SSH public key as:
+          
+          ```shell
+          ssh-keygen -t ed25519 -b 256 -f ./id_ceremony -N "" -C ""
+          ```
+          
+          Next, edit the issue description and report as **SSH Public key** the output of the command:
+          
+          ```shell
+          cat ./id_ceremony.pub
+          ```
+          
+          Please note that if you use Docker to compute your contribution, the key will be automatically added to the Docker image during the build process and available in the working directory. If you already have an SSH key and prefer not to generate a new one, you will need to import your existing key manually.
+          
+          ### Build
+
+          To contribute, you will need a total of at least 33 GiB of combined RAM and SWAP memory *available*. If you are using Docker, ensure that sufficient resources are allocated when running images.
+          
+          #### From sources
+          
+          ```shell
+          cargo install --locked --path . --root .
+          export PATH="./bin:${PATH}"
+          chmod +x download.sh
+          ```
+          
+          #### With Docker
+          
+          ```shell
+          docker build . -t "ceremony"
+          ```
+          
+          ## Contribute
+          
+          **Before proceeding, please post a comment on this issue to notify us that you have started your contribution.**
+          
+          > Only in the case you are using Docker, you need to first run the built image:
+          > ```shell
+          > docker run -it "ceremony"
+          > ```
+          
+          Download the latest contribution:
+          
+          ```shell
+          ./download.sh
+          ```
+          and verify that the hash of the downloaded contribution matches the one reported [here](https://github.com/zircuit-labs/ceremony?tab=readme-ov-file#contributions).
+          
+          Then, compute your contribution:
+          
+          ```shell
+          export RUST_LOG=info
+          contribute -c ./contributions
+          ```
+          
+          The last command will create a contribution using the default settings. For additional options and configurations, please refer to [instructions](https://github.com/zircuit-labs/ceremony/blob/main/docs/ceremony.md#contribute).
+          
+          If you don't plan to actively use your computer during the contribution phase, please read this [section](https://github.com/zircuit-labs/ceremony/blob/main/docs/ceremony.md#preventing-sleep-mode-during-contribution) to avoid performance degradation due to power-saving settings.
+
+          ## Upload Contribution
+          
+          After completing your contribution, upload it to our server using your SSH key:
+          
+          ```shell
+          sftp -i ./id_ceremony contributor@sftp.ceremony.zircuit.com
+          put ./contributions/[YOUR_CONTRIBUTION_ID].csrs
+          quit
+          ```
+          
+          If your upload is interrupted, you can use `reput` in place of `put` to resume it.
+
+          Once the upload is complete, **post a comment on this issue to notify us that your contribution has been uploaded.**

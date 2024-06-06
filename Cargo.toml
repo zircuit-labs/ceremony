@@ -1,0 +1,37 @@
+[package]
+name = "ceremony"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "ceremony"
+path = "src/lib/mod.rs"
+
+[[bin]]
+name = "start"
+path = "src/execs/start.rs"
+
+[[bin]]
+name = "contribute"
+path = "src/execs/contribute.rs"
+
+[[bin]]
+name = "check"
+path = "src/execs/check.rs"
+
+[[bin]]
+name = "finalize"
+path = "src/execs/finalize.rs"
+
+
+[dependencies]
+anyhow = "1.0.82"
+blake2 = "0.10.6"
+clap = { version = "4.5.4", features = ["derive"] }
+env_logger = "0.8.0"
+byteorder = "1.1.0"
+group = "0.13"
+halo2_proofs = {git = "https://github.com/privacy-scaling-explorations/halo2.git", tag = "v0.3.0"}
+log = "0.4.8"
+rand = "0.8.5"
+zeroize = "1.7.0"

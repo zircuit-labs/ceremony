@@ -2,6 +2,8 @@
 
 Welcome to Zircuit Mainnet Ceremony!
 
+![ceremony](https://camo.githubusercontent.com/aece4fbcf5ca7eb74bceadad7449ad9e812f5d5e2c994dc3af5cec31ac1f2294/68747470733a2f2f63646e2e70726f642e776562736974652d66696c65732e636f6d2f3635326463373730313639343233653136616334613764612f3636363231616664353232306666636566646336323061665f6b7a67253230636572656d6f6e792e706e67)
+
 The ceremony is a multi-party computation protocol designed to ensure the security of our proving system. Specifically, it aims to generate a trustable Structured Reference String (SRS) for the [KZG Polynomial Commitment](https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf) scheme.
 
 During the ceremony, each participant generates a secret and uses it to re-randomize the latest available SRS. This updated SRS is then published and made available to the next participant.

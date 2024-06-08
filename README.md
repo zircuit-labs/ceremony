@@ -26,3 +26,4 @@ For more information, please refer to the [build](/docs/build.md) and [ceremony]
 | [`0000000001.csrs`](https://mainnet-ceremony.s3.amazonaws.com/valid/0000000001.csrs)    | `0e2c2bf5c7157d2301aec31fbf981474b4630f6434bb147ba0c1855d632fa111`   | [#2](https://github.com/zircuit-labs/ceremony/issues/2)   |
 | [`0000000002.csrs`](https://mainnet-ceremony.s3.amazonaws.com/valid/0000000002.csrs)    | `4f3065f68d7e4291050ecc6e6323cba8c1705a30f320fbbfcece3d1cb1f85dca`   | [#9](https://github.com/zircuit-labs/ceremony/issues/9)   |
 | [`0000000003.csrs`](https://mainnet-ceremony.s3.amazonaws.com/valid/0000000003.csrs)    | `2107971af18d3cc75a8b68dc9d526ce27921595dba0c6bdcbeda4975cfb63f8b`   | [#4](https://github.com/zircuit-labs/ceremony/issues/4)   |
+| [`0000000004.csrs`](https://mainnet-ceremony.s3.amazonaws.com/valid/0000000004.csrs)    | `46b7ec969f2cbfffac33fa93d427c63b44152d28bc25452ff21e71b99a5e30fa`   | [#5](https://github.com/zircuit-labs/ceremony/issues/5)   |

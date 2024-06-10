@@ -6,7 +6,7 @@ use group::prime::PrimeCurveAffine;
 use halo2_proofs::halo2curves::bn256::{Bn256, Fr, G1Affine};
 use halo2_proofs::halo2curves::{pairing::Engine, serde::SerdeObject};
 use halo2_proofs::SerdeFormat;
-use log::info;
+use log::{error, info};
 use std::fmt::Debug;
 use std::io;
 
@@ -45,14 +45,14 @@ where
         &self.r
     }
 
-    /// Writes parameters to buffer
+    /// Writes contribution proof to buffer
     pub fn write<W: io::Write>(&self, writer: &mut W) -> io::Result<()> {
         self.p.write(writer, SerdeFormat::RawBytes)?;
         self.r.write_raw(writer)?;
         Ok(())
     }
 
-    /// Reads params from a buffer.
+    /// Reads contribution proof from a buffer.
     pub fn read<R: io::Read>(reader: &mut R) -> io::Result<Self> {
         let p = <E::G1Affine as SerdeCurveAffine>::read(reader, SerdeFormat::RawBytes)?;
         let r = <E::Fr as SerdeObject>::read_raw(reader)?;
@@ -86,6 +86,11 @@ pub fn verify_contribution_proof(
     s_g: &G1Affine,
     proof: &ContributionProof<Bn256>,
 ) -> bool {
+    if prev_s_g == s_g {
+        error!("The previous s_g is equal to the current s_g. The contribution proof is invalid, or the SRS was not correctly re-randomized.");
+        return false;
+    }
+
     let mut hasher = Blake2b512::new();
     hasher.update(s_g.to_raw_bytes());
     hasher.update(prev_s_g.to_raw_bytes());

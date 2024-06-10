@@ -157,7 +157,7 @@ pub fn check_contribution_chain(contributions_path: &str) -> Result<bool> {
     for id in contributions_ids.iter() {
         let curr_contribution: KZGContribution<Bn256> =
             KZGContribution::from(contributions_list.get(id).unwrap())?;
-            
+
         let srs_check = check_contribution(&curr_contribution)?;
 
         // We verify the contribution proof.

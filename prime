@@ -1,0 +1,25 @@
+name: wallet connect issues
+about: wallet connect issues 
+title: 'wallet connect'
+labels: bug
+assignees: ''
+---
+
+**Describe the bug**
+wallet connect most times find it hard to work and connect to wallets like metamask for mobile and bitgert for laptops
+
+**To Reproduce**
+Steps to reproduce the behavior:
+i think the steps needed to stop this is to increase the standardization of dapps to accomodate a lot of users
+
+**Expected behavior**
+i expect the wallet connect issues to be reduced as much as possible
+
+
+**Desktop (please complete the following information):**
+- OS: windows 11
+- Version: 2h21
+
+
+**Additional context**
+Add any other context about the problem here.

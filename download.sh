@@ -8,9 +8,9 @@ DOWNLOAD_FOLDER="./contributions"
 
 # Ensure dependencies are installed
 command -v curl >/dev/null 2>&1 || { echo >&2 "curl is required but it is not installed. Aborting."; exit 1; }
-command -v xmllint >/dev/null 2>&1 || { echo >&2 "xmllint is required but it is installed. Aborting."; exit 1; }
-command -v shasum >/dev/null 2>&1 || { echo >&2 "shasum is required but it is installed. Aborting."; exit 1; }
-command -v awk >/dev/null 2>&1 || { echo >&2 "awk is required but it is installed. Aborting."; exit 1; }
+command -v xmllint >/dev/null 2>&1 || { echo >&2 "xmllint is required but it is not installed. Aborting."; exit 1; }
+command -v shasum >/dev/null 2>&1 || { echo >&2 "shasum is required but it is not installed. Aborting."; exit 1; }
+command -v awk >/dev/null 2>&1 || { echo >&2 "awk is required but it is not installed. Aborting."; exit 1; }
 
 # Fetch the list of objects in the S3 bucket
 echo "Fetching list of objects from S3 bucket..."

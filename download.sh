@@ -2,7 +2,7 @@
 
 # Configuration
 BUCKET_URL="https://mainnet-ceremony.s3.amazonaws.com"
-BUCKET_FOLDER="valid"
+BUCKET_FOLDER="contributions"
 XML_RESULT="bucket_contents.xml"
 DOWNLOAD_FOLDER="./contributions"
 

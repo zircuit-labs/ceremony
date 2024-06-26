@@ -15,7 +15,7 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const issueNumber = context.issue.number;
-          const issueMessage = "The ceremony has ended! If you'd like, you can provide a custom random beacon by commenting on issue #50 before June 20, 2024, 00:00:00 UTC. Thank you for your interest in participating in the ceremony!";
+          const issueMessage = "The ceremony has ended! Thank you for your interest in participating in the ceremony!";
           
           await github.rest.issues.createComment({
             owner: context.repo.owner,

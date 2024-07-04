@@ -17,7 +17,7 @@ At any time, contributions can be verified through the `check` binary, which per
 
 ## Start
 
-This stage is performed only once by the Ceremony's adiministrators and its goal is to provide a starting SRS to users on top which new contributions can be computed.
+This stage is performed only once by the Ceremony's administrators and its goal is to provide a starting SRS to users on top of which new contributions can be computed.
 
 The initial contribution can be obtained either by generating a trivial SRS or by extracting the relevant values from a challenge to the [Perpetual Powers of Tau](https://github.com/privacy-scaling-explorations/perpetualpowersoftau) ceremony.
 

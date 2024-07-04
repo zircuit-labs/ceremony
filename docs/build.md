@@ -4,7 +4,7 @@
 
 To [contribute](ceremony.md#contribute), you will need a total of:
 - at least 33 GiB of combined RAM and SWAP memory *available*;
-- at least 32.1 GiB of disk space for storing the latest valid and the newly computed contributions;
+- at least 32.1 GiB of disk space for storing the latest valid and newly computed contributions;
 - at least 12 vCPUs. 
 
 To [check](ceremony.md#check), you will need a total of:

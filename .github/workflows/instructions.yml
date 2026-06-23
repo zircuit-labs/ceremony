@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Provide instructions for contributions
-      uses: peter-evans/create-or-update-comment@v2
+      uses: peter-evans/create-or-update-comment@67dcc547d311b736a8e6c5c236542148a47adc3d # v2.1.1
       with:
         issue-number: ${{ github.event.issue.number }}
         body: |
